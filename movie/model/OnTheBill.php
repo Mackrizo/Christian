@@ -1,0 +1,100 @@
+<?php
+
+namespace model;
+
+class OnTheBill {
+	private $film;
+	private $genre;
+	private $acteursArray;
+	private $salle;
+	private $seance;
+	public function __construct() {
+	}
+	function __construct($film, $genre, $acteursArray, $salle, $seance) {
+		$this->film = $film;
+		$this->genre = $genre;
+		$this->acteursArray = $acteursArray;
+		$this->salle = $salle;
+		$this->seance = $seance;
+	}
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getFilm() {
+		return $this->film;
+	}
+
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getGenre() {
+		return $this->genre;
+	}
+
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getActeursArray() {
+		return $this->acteursArray;
+	}
+
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getSalle() {
+		return $this->salle;
+	}
+
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getSeance() {
+		return $this->seance;
+	}
+
+	/**
+	 *
+	 * @param mixed $film
+	 */
+	public function setFilm($film) {
+		$this->film = $film;
+	}
+
+	/**
+	 *
+	 * @param mixed $genre
+	 */
+	public function setGenre($genre) {
+		$this->genre = $genre;
+	}
+
+	/**
+	 *
+	 * @param mixed $acteursArray
+	 */
+	public function setActeursArray($acteursArray) {
+		$this->acteursArray = $acteursArray;
+	}
+
+	/**
+	 *
+	 * @param mixed $salle
+	 */
+	public function setSalle($salle) {
+		$this->salle = $salle;
+	}
+
+	/**
+	 *
+	 * @param mixed $seance
+	 */
+	public function setSeance($seance) {
+		$this->seance = $seance;
+	}
+}
+

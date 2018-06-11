@@ -1,0 +1,101 @@
+<?php
+
+namespace model;
+
+class OnTheBill {
+	private $film;
+	private $genre;
+	private $acteursArray;
+	private $salle;
+	private $seance;
+	public function __construct() {
+	}
+	function __construct($film, $genre, $acteursArray, $salle, $seance) {
+		$this->film = $film;
+		$this->genre = $genre;
+		$this->acteursArray = $acteursArray;
+		$this->salle = $salle;
+		$this->seance = $seance;
+	}
+	
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getId() {
+		return $this->id;
+	}
+	
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getTitre() {
+		return $this->titre;
+	}
+	
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getNom() {
+		return $this->nom;
+	}
+	
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getPrenom() {
+		return $this->prenom;
+	}
+	
+	/**
+	 *
+	 * @return mixed
+	 */
+	public function getEmail() {
+		return $this->email;
+	}
+	
+	/**
+	 *
+	 * @param mixed $id
+	 */
+	public function setId($id) {
+		$this->id = $id;
+	}
+	
+	/**
+	 *
+	 * @param mixed $titre
+	 */
+	public function setTitre($titre) {
+		$this->titre = $titre;
+	}
+	
+	/**
+	 *
+	 * @param mixed $nom
+	 */
+	public function setNom($nom) {
+		$this->nom = $nom;
+	}
+	
+	/**
+	 *
+	 * @param mixed $prenom
+	 */
+	public function setPrenom($prenom) {
+		$this->prenom = $prenom;
+	}
+	
+	/**
+	 *
+	 * @param mixed $email
+	 */
+	public function setEmail($email) {
+		$this->email = $email;
+	}
+}
+

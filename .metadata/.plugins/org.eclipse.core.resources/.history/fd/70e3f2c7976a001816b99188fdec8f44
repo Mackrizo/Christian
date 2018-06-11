@@ -1,0 +1,70 @@
+<?php namespace dao;
+
+class Database
+{
+
+    /**
+     *
+     * @var Database
+     * @access private
+     * @static
+     */
+    private static $_instance = null;
+
+    /**
+     * Constructeur de la classe
+     *
+     * @param
+     *            void
+     * @return void
+     */
+    private function __construct()
+    {}
+
+    /**
+     * M�thode qui cr�e l'unique instance de la classe
+     * si elle n'existe pas encore puis la retourne.
+     *
+     * @param
+     *            void
+     * @return Database
+     */
+    public static function getInstance()
+    {
+        if (is_null(self::$_instance)) {
+            self::$_instance = new Database();
+        }
+        
+        return self::$_instance;
+    }
+
+    /**
+     * Connect to the database
+     *
+     * @return bool false on failure / mysqli MySQLi object instance on success
+     */
+    public function connect()
+    {
+        // Try and connect to the database
+        if (! isset(self::$_instance)) {
+            // Load configuration as an array. Use the actual location of your configuration file
+            
+            self::$_instance = mysqli("localhost", "root", "mackrizo", "Moviepolis");
+        }
+        
+        // If connection was not successful, handle the error
+        if (self::$_instance === false) {
+            // Handle error - notify administrator, log to a file, show an error screen, etc.
+            return false;
+        }
+        return self::$_instance;
+    }
+    public function getInstance(){
+    	return $this->_instance;
+    }
+    
+    public function close(){
+        mysqli_close($this->_instance);
+    }
+}
+

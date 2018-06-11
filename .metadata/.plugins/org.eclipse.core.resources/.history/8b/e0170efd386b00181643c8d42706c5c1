@@ -1,0 +1,50 @@
+<?php
+
+namespace model;
+
+class Film extends BaseModel {
+	private $titre;
+	private $pays;
+	private $duree;
+	private $dateSortie;
+	private $synopsis;
+	private $id_personne;
+	private $realisateur = new Personne ();
+	function __construct($data) {
+		$this->id = $data ['id_film'];
+		$this->titre = $data ['id_film'];
+		$this->pays = $data ['duree'];
+		$this->duree = $data ['duree'];
+		$this->dateSortie = $data ['id_film'];
+		$this->synopsis = $data ['synopsis_film'];
+		$this->id_personne->setId ( $data ['id_personne'] );
+	}
+	function Film($id, $titre, $pays, $duree, $dateSortie, $synopsis, $realisateur) {
+		$this->id = $id;
+		$this->titre = $titre;
+		$this->pays = $pays;
+		$this->duree = $duree;
+		$this->dateSortie = $dateSortie;
+		$this->synopsis = $synopsis;
+		$this->realisateur = $realisateur;
+	}
+	function Film($id, $titre, $pays, $duree, $dateSortie, $synopsis) {
+		$this->id = $id;
+		$this->titre = $titre;
+		$this->pays = $pays;
+		$this->duree = $duree;
+		$this->dateSortie = $dateSortie;
+		$this->synopsis = $synopsis;
+	}
+
+	public function properties() {
+		return get_object_vars ( $this );
+	}
+	public function properties_names() {
+		return array_keys ( get_object_vars ( $this ) );
+	}
+	public function to_string() {
+		return "Id : $this->id, titre : $this->titre, pays : $this->pays, dur�e : $this->duree";
+	}
+}
+

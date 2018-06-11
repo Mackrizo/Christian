@@ -1,0 +1,35 @@
+<?php
+
+namespace model;
+
+class Film extends BaseModel {
+	private $id_film;
+	private $titre_film;
+	private $pays;
+	private $duree;
+	private $date_sortie;
+	private $synopsis_film;
+	private $id_personne;
+	private $realisateur = new Personne ();
+	function __construct($data) {
+		$this->id_film = $data ['id_film'];
+		$this->titre_film = $data ['id_film'];
+		$this->pays = $data ['pays'];
+		$this->duree = $data ['duree'];
+		$this->date_sortie = $data ['id_film'];
+		$this->synopsis_film = $data ['synopsis_film'];
+		$this->id_personne->setId ( $data ['id_personne'] );
+	}
+
+	
+	public function properties() {
+		return get_object_vars ( $this );
+	}
+	public function properties_names() {
+		return array_keys ( get_object_vars ( $this ) );
+	}
+	public function to_string() {
+		return "Id : $this->id, titre : $this->titre, pays : $this->pays, dur�e : $this->duree";
+	}
+}
+

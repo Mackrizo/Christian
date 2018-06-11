@@ -1,0 +1,161 @@
+<?php
+
+namespace model;
+
+class Film extends BaseModel {
+	private $id_film;
+	private $titre_film;
+	private $pays;
+	private $duree;
+	private $date_sortie;
+	private $synopsis_film;
+	private $id_personne;
+	private $realisateur = new Personne ();
+	function __construct($data) {
+		$this->id_film = $data ['id_film'];
+		$this->titre_film = $data ['id_film'];
+		$this->pays = $data ['pays'];
+		$this->duree = $data ['duree'];
+		$this->date_sortie = $data ['id_film'];
+		$this->synopsis_film = $data ['synopsis_film'];
+		$this->id_personne->setId ( $data ['id_personne'] );
+	}
+	/**
+     * @return mixed
+     */
+    public function getId_film()
+    {
+        return $this->id_film;
+    }
+
+	/**
+     * @return mixed
+     */
+    public function getTitre_film()
+    {
+        return $this->titre_film;
+    }
+
+	/**
+     * @return mixed
+     */
+    public function getPays()
+    {
+        return $this->pays;
+    }
+
+	/**
+     * @return mixed
+     */
+    public function getDuree()
+    {
+        return $this->duree;
+    }
+
+	/**
+     * @return mixed
+     */
+    public function getDate_sortie()
+    {
+        return $this->date_sortie;
+    }
+
+	/**
+     * @return mixed
+     */
+    public function getSynopsis_film()
+    {
+        return $this->synopsis_film;
+    }
+
+	/**
+     * @return mixed
+     */
+    public function getId_personne()
+    {
+        return $this->id_personne;
+    }
+
+	/**
+     * @return \model\Personne
+     */
+    public function getRealisateur()
+    {
+        return $this->realisateur;
+    }
+
+	/**
+     * @param mixed $id_film
+     */
+    public function setId_film($id_film)
+    {
+        $this->id_film = $id_film;
+    }
+
+	/**
+     * @param mixed $titre_film
+     */
+    public function setTitre_film($titre_film)
+    {
+        $this->titre_film = $titre_film;
+    }
+
+	/**
+     * @param mixed $pays
+     */
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
+    }
+
+	/**
+     * @param mixed $duree
+     */
+    public function setDuree($duree)
+    {
+        $this->duree = $duree;
+    }
+
+	/**
+     * @param mixed $date_sortie
+     */
+    public function setDate_sortie($date_sortie)
+    {
+        $this->date_sortie = $date_sortie;
+    }
+
+	/**
+     * @param mixed $synopsis_film
+     */
+    public function setSynopsis_film($synopsis_film)
+    {
+        $this->synopsis_film = $synopsis_film;
+    }
+
+	/**
+     * @param mixed $id_personne
+     */
+    public function setId_personne($id_personne)
+    {
+        $this->id_personne = $id_personne;
+    }
+
+	/**
+     * @param \model\Personne $realisateur
+     */
+    public function setRealisateur($realisateur)
+    {
+        $this->realisateur = $realisateur;
+    }
+
+	public function properties() {
+		return get_object_vars ( $this );
+	}
+	public function properties_names() {
+		return array_keys ( get_object_vars ( $this ) );
+	}
+	public function to_string() {
+		return "Id : $this->id, titre : $this->titre, pays : $this->pays, dur�e : $this->duree";
+	}
+}
+
